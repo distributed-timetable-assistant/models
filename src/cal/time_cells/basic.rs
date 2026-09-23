@@ -1,0 +1,23 @@
+use crate::cal::time_cells::common::{Cell, Rule, Status};
+use serde::{Deserialize, Serialize};
+use uuid::Uuid;
+
+#[derive(Serialize, Deserialize, Clone, Debug, Hash, Eq, PartialEq)]
+#[cfg_attr(feature = "store", derive(reactive_stores::Store))]
+pub struct BasicTimeCell<T> {
+    pub id: Uuid,
+    pub start: T,
+    pub end: T,
+    pub rules: Vec<Rule>,
+    pub status: Status,
+    // Capacity divide: 0 allows scheduling at any time within the interval;
+    // 1 allows only one course to occupy the interval;
+    // values greater than 1 allow the interval to be divided among multiple courses.
+    pub div_cap: u16,
+}
+
+impl<T> Cell for BasicTimeCell<T> {
+    fn id(&self) -> Uuid {
+        self.id
+    }
+}
