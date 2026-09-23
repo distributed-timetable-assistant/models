@@ -1,0 +1,19 @@
+[package]
+name = "models"
+version = "0.1.0"
+edition = "2024"
+description = "Shared domain models for DiTA"
+repository = "https://github.com/distributed-timetable-assistant/models"
+
+[features]
+default = []
+store = ["dep:reactive_stores"]
+
+[dependencies]
+serde = { version = "^1.0", features = ["derive"] }
+chrono = { version = "0.4", features = ["serde"] }
+reactive_stores = { version = "0.4", optional = true }
+
+[dev-dependencies]
+rstest = "0.27"
+serde_yaml = "0.9"

@@ -1,0 +1,10 @@
+avails:
+  - type: Basic
+    start: 2026-01-01T00:00:00Z
+    end: 2026-12-30T23:59:59Z
+    rules: []
+    status: Available
+    # Capacity divide: 0 allows scheduling at any time within the interval;
+    # 1 allows only one course to occupy the interval;
+    # values greater than 1 allow the interval to be divided among multiple courses.
+    div_cap: 1

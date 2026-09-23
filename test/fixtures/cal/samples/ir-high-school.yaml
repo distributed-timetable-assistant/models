@@ -1,0 +1,42 @@
+# Iran High School Weekly Calendar
+avails:
+  - type: Weekly
+    start: 2026-09-22T00:00:00+03:30
+    end: 2027-06-21T23:59:59+03:30
+    time_cells:
+      # Monday to Saturday
+      - type: Daily
+        start:
+          day: Sat
+          time: 07:30:00
+        end:
+          day: Thu
+          time: 13:30:00
+        time_cells:
+          # Period 1: 07:30 - 08:15
+          - type: Basic
+            start: 08:00:00
+            end: 09:30:00
+            rules: []
+            status: Available
+            div_cap: 2
+          # Period 2: 08:30 - 09:20
+          - type: Basic
+            start: 09:45:00
+            end: 11:15:00
+            rules: []
+            status: Available
+            div_cap: 2
+          # Period 3: 09:30 - 10:20
+          - type: Basic
+            start: 11:30:00
+            end: 13:00:00
+            rules: []
+            status: Available
+            div_cap: 2
+  # School holidays
+  - type: Holiday
+    start: 2026-09-22T00:00:00+03:30
+    end: 2027-06-21T23:59:59+03:30
+    country: "ir"
+    status: Unavailable
